@@ -25,5 +25,11 @@ We are using the name of the ECR repositories, such as "project/image:tag" for o
 |  images| List of images names | `list(string)`| n/a |
 
 ## Outputs
-Repository Name => Repository URL
 
+|Name|Description  |
+|--|--|
+|repositories  | List of "repository name = repository url"  |
+
+
+## Examples
+[Pantheon-Dev](https://git.acclabs.com.br/gitlab/acc/aplicacao-modelo-aws/src/tree/master/terraform/dev)
