@@ -13,16 +13,15 @@ We are using the name of the ECR repositories, such as "project/image:tag" for o
 ## Usage
 
      module  "ecr" {    
-        source = "app.terraform.io/accurate/ecr/aws"    
-        version = "1.0.0"    
-        project = "MyProject"    
+        source = "./modules/ecr"   
+        project = "myproject"    
         images = ["myimage1","myimage2","myimage3"]    
         }
 
 ## Input
 |  Name|Description   | Type | Default
 |--|--|--|--|
-|  project| The name of the project for the repository | `string`| n/a |
+|  project| The name of the project for the repository lower case required | `string`| n/a |
 |  images| List of images names | `list(string)`| n/a |
 
 ## Outputs

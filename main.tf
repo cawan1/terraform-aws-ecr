@@ -3,3 +3,8 @@ module "ecr" {
     project = var.project
     images = var.images
 }
+
+module "vpc" {
+    source = "./modules/vpc"
+    project = var.project
+}
