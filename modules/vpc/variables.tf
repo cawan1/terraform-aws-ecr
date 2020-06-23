@@ -1,3 +1,13 @@
+variable "project" {
+  type = string
+  description = "Project Name"
+}
+variable "environment" {
+  type = string
+  description = "environment"s
+}
+
+
 ######   NETWORK  #########
 variable "cidr" {
   type = string
