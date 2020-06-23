@@ -1,8 +1,20 @@
-resource "aws_ecr_repository" "repository" {
-  count = length(var.images)
-  name                 = "${var.project}/${var.images[count.index]}"
-  image_tag_mutability = "MUTABLE"
-  image_scanning_configuration {
-    scan_on_push = false
+provider "aws" {
+  version = "~> 2.0"
+  region  = "us-east-1"
+}
+
+terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "accurate" 
+    workspaces {
+      name = "${var.project}-${var.environment}"
+    }
   }
+}
+
+module "ecr" {
+    source = "./module/ecr"
+    project = var.project
+    images = var.images
 }

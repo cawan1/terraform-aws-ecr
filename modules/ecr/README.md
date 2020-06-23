@@ -1,28 +1,27 @@
 
 *Accurate Software*
 
-# AWS Terraform module
+# AWS ECR Terraform module
 
-Accurate AWS Terraform module.
+Accurate AWS ECR Terraform module.
 
-Terraform module which creates resources on AWS.
+Terraform module which creates ECR resources on AWS.
+
+AWS ECR by default creates a repository for each image, just versioning image by tags.
+We are using the name of the ECR repositories, such as "project/image:tag" for organizational purposes.
 
 ## Usage
 
-     module  "accurate" {    
+     module  "ecr" {    
         source = "app.terraform.io/accurate/ecr/aws"    
-        version = "1.0.1"    
-        region = "us-east-1"
-        project = "MyProject"
-        environment = "test"   
-        images = ["myimage1","myimage2","myimage3"]
-
+        version = "1.0.0"    
+        project = "MyProject"    
+        images = ["myimage1","myimage2","myimage3"]    
         }
 
 ## Input
 |  Name|Description   | Type | Default
 |--|--|--|--|
-|  region | AWS Region | `string`| "us-east-1" |
 |  project| The name of the project for the repository | `string`| n/a |
 |  images| List of images names | `list(string)`| n/a |
 
