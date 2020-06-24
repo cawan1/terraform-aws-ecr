@@ -12,7 +12,6 @@ Terraform module which creates resources on AWS.
      module  "accurate" {    
         source = "app.terraform.io/accurate/ecr/aws"    
         version = "1.0.4"    
-        region = "us-east-1"
         project = "myproject"
         environment = "test"   
         images = ["myimage1","myimage2","myimage3"]

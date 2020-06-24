@@ -17,6 +17,8 @@ Required resource VPC with subnets.
         source = "./modules/rds"    
         project = "myproject"
         environment = "dev"
+        vpc_id = module.vpc.vpc_id
+        db_password = "cawanzinhoboladao001112"
         }
 
 ## Input
