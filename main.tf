@@ -14,7 +14,7 @@ module "vpc" {
 module "rds" {
     source = "./modules/rds"
     project = var.project
-    environment = var.
+    environment = var.environment
     vpc_id = module.vpc.vpc_id
     db_password = "cawanzinhoboladao001112"
 }
