@@ -16,7 +16,7 @@ variable "db_username" {
 
 variable "db_password" {
   type = string
-  default = "50820ca6b63e5a1fb873d007af72f900"
+  #default = "50820ca6b63e5a1fb873d007af72f900"
   description = "Password for root user"
 }
 

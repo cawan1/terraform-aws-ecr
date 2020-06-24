@@ -16,7 +16,7 @@ module "rds" {
     project = var.project
     environment = var.environment
     vpc_id = module.vpc.vpc_id
-    rds_db_password = var.rds_db_password 
+    db_password = var.rds_db_password 
 }
 
 module "cdn" {
