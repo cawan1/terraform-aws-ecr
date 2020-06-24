@@ -1,6 +1,6 @@
-output "ecr_repositories" {
-    value = module.ecr.repositories
-}
+# output "ecr_repositories" {
+#     value = module.ecr.repositories
+# }
 
 output "vpc_id" {
   description = "The ID of the VPC"

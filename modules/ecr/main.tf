@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "repository" {
+resource "aws_ecr_repository" "this" {
   count = length(var.images)
   name                 = "${var.project}/${var.images[count.index]}"
   image_tag_mutability = "MUTABLE"

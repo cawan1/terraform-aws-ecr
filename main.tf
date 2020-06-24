@@ -1,8 +1,8 @@
-module "ecr" {
-    source = "./modules/ecr"
-    project = var.project
-    images = var.images
-}
+#module "ecr" {
+#    source = "./modules/ecr"
+#    project = var.project
+#    images = var.images
+#}
 
 module "vpc" {
     source = "./modules/vpc"

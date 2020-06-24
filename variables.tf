@@ -8,12 +8,12 @@ variable "environment" {
     description = "Environment"
 }
 
-variable "images" {
-    type = list(string)
-    description = "List of images for repository"
-}
+# variable "images" {
+#     type = list(string)
+#     description = "List of images for repository"
+# }
 
-variable "db_password" {
+variable "rds_db_password" {
     type = string
     description = "Root user password"
 }

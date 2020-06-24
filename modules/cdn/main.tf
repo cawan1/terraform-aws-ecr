@@ -2,7 +2,7 @@
 ###   CDN CloudFront    ##
 ##########################
 
-resource "aws_s3_bucket" "bucket-origin" {
+resource "aws_s3_bucket" "origin" {
   bucket = "${var.project}-${var.environment}"
   acl    = "private"
   tags = {
@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "bucket-origin" {
   }
 }
 
-resource "aws_s3_bucket" "bucket-origin-log" {
+resource "aws_s3_bucket" "origin-log" {
   bucket = "${var.project}-log-${var.environment}"
   acl    = "private"
   tags = {
@@ -22,17 +22,17 @@ locals {
   s3_origin_id = "${var.project}-S3Origin-${var.environment}"
 }
 
-resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
+resource "aws_cloudfront_origin_access_identity" "this" {
   comment = "only cloudfront access - ${var.project} - ${var.environment}"
 }
 
-resource "aws_cloudfront_distribution" "distribution" {
+resource "aws_cloudfront_distribution" "this" {
   origin {
-    domain_name = aws_s3_bucket.bucket-origin.bucket_regional_domain_name
+    domain_name = aws_s3_bucket.origin.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
 
     s3_origin_config {
-      origin_access_identity = aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path
+      origin_access_identity = aws_cloudfront_origin_access_identity.this.cloudfront_access_identity_path
     }
   }
 
@@ -43,7 +43,7 @@ resource "aws_cloudfront_distribution" "distribution" {
 
   logging_config {
     include_cookies = false
-    bucket          = aws_s3_bucket.bucket-origin-log.bucket_regional_domain_name
+    bucket          = aws_s3_bucket.origin-log.bucket_regional_domain_name
     prefix          = var.environment
   }
 

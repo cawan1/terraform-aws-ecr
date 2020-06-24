@@ -3,33 +3,41 @@
 
 # AWS Terraform module
 
-Accurate AWS Terraform module.
+APP Modelo AWS Terraform module.
 
 Terraform module which creates resources on AWS.
+
+This module by default will create:
+- VPC
+  - 3 subnets
+- RDS
+  - Free-tier Postgres - Public Accessible
+- CDN
+  - CloudFront Distribution
+  - S3 Bucket
+  
 
 ## Usage
 
      module  "accurate" {    
         source = "app.terraform.io/accurate/ecr/aws"    
-        version = "1.0.4"    
+        version = "1.0.0"    
         project = "myproject"
         environment = "test"   
-        images = ["myimage1","myimage2","myimage3"]
-
+        rds_db_password = "mypassword123"
         }
 
 ## Input
-|  Name|Description   | Type | Default
-|--|--|--|--|
-|  region | AWS Region | `string`| "us-east-1" |
-|  project| The name of the project for the repository lower case required | `string`| n/a |
-|  images| List of images names | `list(string)`| n/a |
+|  Name|Description   | Type | Default | Required
+|--|--|--|--|--|
+|  project| The name of the project for the repository lower case required | `string`| n/a | yes |
+|  environment | The environment of the project | `string`| n/a | yes |
+|  rds_db_password | Password for root user in RDS Postgres instance | `string`| n/a | yes |
 
 ## Outputs
 
 |Name|Description  |
 |--|--|
-|repositories  | List of "repository name = repository url"  |
 |vpc_id  | The ID of the VPC  |
 |private_subnets  | List of IDs of private subnets  |
 |public_subnets  | List of IDs of public subnets  |
@@ -41,4 +49,5 @@ Terraform module which creates resources on AWS.
 
 
 ## Examples
-[Pantheon-Dev](https://git.acclabs.com.br/gitlab/acc/aplicacao-modelo-aws/src/tree/master/terraform/dev)
+  - [Pantheon-Dev](https://git.acclabs.com.br/gitlab/acc/aplicacao-modelo-aws/src/tree/master/terraform/dev)
+  - [Sample-Default](https://git.acclabs.com.br/gitlab/acc/aplicacao-modelo-aws/terraform-aws-accurate/tree/master/samples/default)

@@ -1,6 +1,6 @@
-output "repositories" {
-  value = module.accurate.ecr_repositories
-}
+# output "repositories" {
+#   value = module.accurate.ecr_repositories
+# }
 
 output "vpc_id" {
   description = "The ID of the VPC"
@@ -39,6 +39,6 @@ output "rds_instance_username" {
 }
 
 output "cdn_domainname" {
-  value = module.accurate.distribution.cdn_domainname
+  value = module.accurate.cdn_domainname
   description = "CDN Domain name"
 }
