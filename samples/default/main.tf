@@ -15,8 +15,9 @@ terraform {
 
 module  "accurate" {    
    source = "app.terraform.io/accurate/ecr/aws"    
-   version = "1.1.2"    
+   version = "1.1.3"    
    project = "myproject" #lower case required
    environment = "test"   
    images = ["myimage1","myimage2","myimage3"]
+   db_password = var.db_password
    }

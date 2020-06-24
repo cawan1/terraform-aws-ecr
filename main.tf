@@ -16,5 +16,12 @@ module "rds" {
     project = var.project
     environment = var.environment
     vpc_id = module.vpc.vpc_id
-    db_password = "cawanzinhoboladao001112"
+    db_password = var.db_password 
+}
+
+module "cdn" {
+    source = "./modules/cdn"
+    project = var.project
+    environment = var.environment
+    
 }

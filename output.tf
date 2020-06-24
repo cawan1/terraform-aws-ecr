@@ -21,3 +21,24 @@ output "database_subnets" {
   description = "List of IDs of database subnets"
   value       = module.vpc.database_subnets
 }
+
+
+output "rds_instance_endpoint" {
+  description = "Endpoint Connection"
+  value       = module.rds.rds_instance_endpoint
+}
+
+output "rds_instance_name" {
+  description = "The database name"
+  value       = module.rds.rds_instance_name
+}
+
+output "rds_instance_username" {
+  description = "The master username for the database"
+  value       = module.rds.rds_instance_username
+}
+
+output "cdn_domainname" {
+  value = module.cdn.cdn_domainname
+  description = "CDN Domain name"
+}

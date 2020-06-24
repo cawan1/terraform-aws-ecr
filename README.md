@@ -34,6 +34,11 @@ Terraform module which creates resources on AWS.
 |private_subnets  | List of IDs of private subnets  |
 |public_subnets  | List of IDs of public subnets  |
 |database_subnets  | List of IDs of database subnets  |
+|rds_instance_endpoint  | Endpoint Connection  |
+|rds_instance_name  | The database name  |
+|rds_instance_username  | The master username for the database  |
+|cdn_domainname | CDN Domain name |
+
 
 ## Examples
 [Pantheon-Dev](https://git.acclabs.com.br/gitlab/acc/aplicacao-modelo-aws/src/tree/master/terraform/dev)

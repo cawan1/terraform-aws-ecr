@@ -1,6 +1,6 @@
 
 output "rds_instance_endpoint" {
-  description = "Connection Endpoint"
+  description = "Endpoint Connection"
   value       = "${module.db.this_db_instance_endpoint}"
 }
 

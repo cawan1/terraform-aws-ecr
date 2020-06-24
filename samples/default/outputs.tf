@@ -21,3 +21,19 @@ output "database_subnets" {
   description = "List of IDs of database subnets"
   value       = module.accurate.database_subnets
 }
+
+
+output "rds_instance_endpoint" {
+  description = "Endpoint Connection"
+  value       = module.accurate.rds_instance_endpoint
+}
+
+output "rds_instance_name" {
+  description = "The database name"
+  value       = module.accurate.rds_instance_name
+}
+
+output "rds_instance_username" {
+  description = "The master username for the database"
+  value       = module.accurate.rds_instance_username
+}

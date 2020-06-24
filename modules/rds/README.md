@@ -1,7 +1,7 @@
 
 *Accurate Software*
 
-# AWS ECR Terraform module
+# AWS RDS Terraform module
 
 Accurate AWS RDS Terraform module.
 
@@ -44,10 +44,9 @@ Required resource VPC with subnets.
 
 |Name|Description  |
 |--|--|
-|vpc_id  | The ID of the VPC  |
-|private_subnets  | List of IDs of private subnets  |
-|public_subnets  | List of IDs of public subnets  |
-|database_subnets  | List of IDs of database subnets  |
+|rds_instance_endpoint  | Endpoint Connection |
+|rds_instance_name  | The database name  |
+|rds_instance_username  | The root username for the database  |
 
 
 ## Examples
