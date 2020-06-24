@@ -37,3 +37,8 @@ output "rds_instance_username" {
   description = "The master username for the database"
   value       = module.accurate.rds_instance_username
 }
+
+output "cdn_domainname" {
+  value = module.accurate.distribution.cdn_domainname
+  description = "CDN Domain name"
+}
