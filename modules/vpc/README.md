@@ -1,7 +1,6 @@
-
 *Accurate Software*
 
-# AWS ECR Terraform module
+# AWS VPC Terraform module
 
 Accurate AWS VPC Terraform module.
 
