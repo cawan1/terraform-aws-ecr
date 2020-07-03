@@ -23,11 +23,10 @@
 #     source = "./modules/cdn"
 #     project = var.project
 #     environment = var.environment
-    
 # }
 
-module  "cognito" {    
-   source = "./modules/cognito"    
-   project = var.project
-   environment = var.environment
+module "cognito" {
+  source      = "./modules/cognito"
+  project     = var.project
+  environment = var.environment
 }

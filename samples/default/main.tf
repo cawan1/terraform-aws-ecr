@@ -15,9 +15,7 @@ terraform {
 
 module  "accurate" {    
    source = "app.terraform.io/accurate/ecr/aws"    
-   version = "1.2.0"    
+   version = "1.2.2"    
    project = "myproject" #lower case required
    environment = "test"   
-  #  images = ["myimage1","myimage2","myimage3"]
-   rds_db_password = var.rds_db_password
    }

@@ -40,6 +40,6 @@ output "rds_instance_username" {
 
 output "cdn_domainname" {
   description = "CDN Domain name"
-  value = module.cdn.cdn_domainname
+  value       = module.cdn.cdn_domainname
 
 }

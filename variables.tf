@@ -1,11 +1,13 @@
 variable "project" {
-    type = string
-    description = "Project Name"
+  type        = string
+  description = "Project Name"
+  default     = "cawan"
 }
 
 variable "environment" {
-    type = string
-    description = "Environment"
+  type        = string
+  description = "Environment"
+  default     = "dev"
 }
 
 # variable "images" {
@@ -13,7 +15,7 @@ variable "environment" {
 #     description = "List of images for repository"
 # }
 
-variable "rds_db_password" {
-    type = string
-    description = "Root user password"
-}
+#variable "rds_db_password" {
+#    type = string
+#    description = "Root user password"
+#}
