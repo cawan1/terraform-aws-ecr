@@ -8,14 +8,15 @@ terraform {
     hostname     = "app.terraform.io"
     organization = "accurate" 
     workspaces {
-      name = "validando3"
+      name = "validando4"
     }
   }
 }
 
 module  "accurate" {    
    source = "app.terraform.io/accurate/ecr/aws"    
-   version = "1.2.5"    
+   version = "1.2.6"    
    project = "myproject" #lower case required
    environment = "test"   
+   rds_db_password = var.rds_db_password
    }
