@@ -15,7 +15,7 @@ terraform {
 
 module  "accurate" {    
    source = "app.terraform.io/accurate/ecr/aws"    
-   version = "1.2.2"    
+   version = "1.2.3"    
    project = "myproject" #lower case required
    environment = "test"   
    }

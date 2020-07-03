@@ -13,7 +13,7 @@ resource "aws_cognito_user_pool_client" "this" {
 
 
 resource "aws_cognito_identity_pool" "this" {
-  identity_pool_name = "${var.project}-${var.environment}-identity-pool"
+  identity_pool_name = "${var.project}IdentityPool${var.environment}"
   allow_unauthenticated_identities = false
   cognito_identity_providers {
     client_id               = aws_cognito_user_pool_client.this.id
