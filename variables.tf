@@ -15,7 +15,7 @@ variable "environment" {
 #     description = "List of images for repository"
 # }
 
-#variable "rds_db_password" {
-#    type = string
-#    description = "Root user password"
-#}
+variable "rds_db_password" {
+   type = string
+   description = "Root user password"
+}
